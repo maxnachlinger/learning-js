@@ -8,7 +8,7 @@ So yeah, a bit can be either 1 or 0
 Here's the number 6 stored as 8 bits:
 00000110
 
-WTF us that? Glad you asked! Let's read it right to left, well just the last 3 digits 110
+WTF is that? Glad you asked! Let's read it right to left, well just the last 3 digits 110
 
 OK, it's not one-hundred and ten :) Let's go right to left by powers of 2, dig it:
 
