@@ -1,0 +1,81 @@
+This is a bit
+0
+Oh it can also be
+1
+
+So yeah, a bit can be either 1 or 0
+
+Here's the number 6 stored as 8 bits:
+00000110
+
+WTF us that? Glad you asked! Let's read it right to left, well just the last 3 digits 110
+
+OK, it's not one-hundred and ten :) Let's go right to left by powers of 2, dig it:
+
+
+1     1     0
+|     |     |-- This 0 is the 0th place, so we take 2 to the 0th power, that's 1, multiplied by 0 = 0
+|     |
+|     |-- This is the 1st place, so we take 2 to the 1st power, that's 2 and multiply that by 1, that's 2
+|
+|-- This is the 2nd place, so we take 2 to the 2nd power, which is 4, multiply it by 1, that's 4
+
+Now add them up. 0 + 2 + 4 = 6
+
+WTF?
+
+No really, this is how you've been counting for years, but in powers of 10. I'll prove it.
+
+231 - ok this is two-hundred and thirty-one, let's parse it:
+
+2     3     1
+|     |     |-- This 0th place, so we take 10 to the 0th power, which is 1, multiplied by 1 = 1
+|     |
+|     |-- This is the 1st place, so we take 10 to the 1st power, which is 10, multiplied by 3 = 30
+|
+|-- This is the 2nd place, so we take 10 to the 2nd power, which is 100, multiplied by 2 = 200
+
+So it's 200 + 30 + 1
+
+
+So what happens, when we move all the number 1 place to the left. This is called shifting. Let's shift 231
+left 1 place to: 2310
+
+2     3     1      0
+|     |     |      |-- This 0th place, so we take 10 to the 0th power, which is 1, multiplied by 0 = 0
+|     |     |
+|     |     |-- This is the 1st place, so we take 10 to the 1st power, which is 10, multiplied by 1 = 10
+|     |
+|     |-- This is the 2nd place, so we take 10 to the 2nd power, which is 100, multiplied by 3 = 300
+|
+|-- This is the 3rd place, so we take 10 to the 3rd power, which is 1000, multiplied by 2 = 2000
+
+
+Now let's shift 6 in binary left 1 place - remember 00000110?
+Let's shift it left 1:  00000110 -> to -> 00001100. See how we moved the 11's 1 place to the left? The old place was
+replaced with a 0, this
+
+1     1     0     0
+|     |     |     |-- This 0 is the 0th place, so we take 2 to the 0th power, that's 1, multiplied by 0 = 0
+|     |     |
+|     |     |-- This is the 1st place, so we take 2 to the 1st power, that's 2 and multiply that by 0, that's 0
+|     |
+|     |-- This is the 2nd place, so we take 2 to the 2nd power, which is 4, multiply it by 1, that's 4
+|
+|-- This is the 3rd place, so we take 2 to the 3rd power, which is 8, times 1, which is 8
+
+Now add them up. 0 + 0 + 4 + 8 = 12
+
+In code, a left shift of 1 looks like this:
+6 << 1 (which = 12)
+
+Notice how when we shifted to the left we filled in a 0? That's called padding. Yay.
+
+If you're super cool, you can think of a left shift << like multiplying 2 to the power you're left-shifting by, so
+6 << 1 is like 6 * (2^1) which is 6 * 2 which is 12. Or 6 << 2 is like 6 * (2^2) = 6 * 4 which 24
+
+Oh hey, let's shift our 6 example back the right:
+(6 << 1) = 12 right? So to go back to the right, try this: (6 << 1) >> 1
+
+We're shifting left 1, and then back right
+
