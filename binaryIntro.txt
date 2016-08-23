@@ -72,7 +72,7 @@ In code, a left shift of 1 looks like this:
 Notice how when we shifted to the left we filled in a 0? That's called padding. Yay.
 
 If you're super cool, you can think of a left shift << like multiplying 2 to the power you're left-shifting by, so
-6 << 1 is like 6 * (2^1) which is 6 * 2 which is 12. Or 6 << 2 is like 6 * (2^2) = 6 * 4 which 24
+6 << 1 is like 6 * (2^1) which is 6 * 2 which is 12. Or 6 << 2 is like 6 * (2^2) = 6 * 4 which is 24
 
 Oh hey, let's shift our 6 example back the right:
 (6 << 1) = 12 right? So to go back to the right, try this: (6 << 1) >> 1
