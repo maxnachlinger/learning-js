@@ -38,7 +38,7 @@ No really, this is how you've been counting for years, but in powers of 10. I'll
 So it's 200 + 30 + 1
 
 
-So what happens, when we move all the number 1 place to the left. This is called shifting. Let's shift 231
+So what happens, when we move all the numbers 1 place to the left. This is called shifting. Let's shift 231
 left 1 place to: 2310
 
 2     3     1      0
@@ -51,9 +51,9 @@ left 1 place to: 2310
 |-- This is the 3rd place, so we take 10 to the 3rd power, which is 1000, multiplied by 2 = 2000
 
 
-Now let's shift 6 in binary left 1 place - remember 00000110?
+Now let's shift 6 (in binary) left 1 place - remember 00000110?
 Let's shift it left 1:  00000110 -> to -> 00001100. See how we moved the 11's 1 place to the left? The old place was
-replaced with a 0, this
+replaced with a 0, here's the new number:
 
 1     1     0     0
 |     |     |     |-- This 0 is the 0th place, so we take 2 to the 0th power, that's 1, multiplied by 0 = 0
